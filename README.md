@@ -1,24 +1,39 @@
 /src
 ├── domain
-│   ├── models          # Lógica de negocio pura
-│   ├── value-objects   # Tipos con lógica interna (ej: Email)
-│   ├── repositories    # Interfaces abstractas
-│   └── services        # Casos de uso del dominio
+│   ├── models          # Core business logic
+│   ├── value-objects   # Objects with internal logic (e.g., Email)
+│   ├── repositories    # Abstract interfaces (ports)
+│   └── services        # Domain services
 │
 ├── application
-│   ├── use-cases       # Coordinan operaciones del dominio
+│   ├── use-cases       # Orchestrate domain operations
 │   └── dto             # Data Transfer Objects
 │
 ├── infrastructure
-│   ├── db              # Conexión y modelos de BD
-│   ├── repositories    # Implementaciones reales de interfaces
-│   └── services        # Servicios externos (por ejemplo, email)
+│   ├── db              # Database connection and models
+│   ├── repositories    # Concrete implementations of interfaces
+│   └── services        # External services (e.g., email)
 │
 ├── interfaces
 │   └── http
-│       ├── routes      # Definición de endpoints
-│       ├── controllers # Controladores que llaman a los use-cases
-│       └── middlewares
+│       ├── routes      # API endpoints definitions
+│       ├── controllers # Handle requests and call use-cases
+│       └── middlewares # Express middlewares
 │
-├── shared              # Errores, tipos comunes, helpers
-└── index.ts            # Punto de entrada
+├── shared              # Common types, errors, helpers
+└── index.ts            # Application entry point
+
+This project follows a Hexagonal Architecture (Ports & Adapters) approach.
+
+The goal is to separate business logic from external concerns such as databases,
+frameworks or APIs, making the application more maintainable, testable and scalable.
+
+- Domain: Core business rules and logic
+- Application: Use cases that coordinate domain behavior
+- Infrastructure: External implementations (database, services)
+- Interfaces: Entry points (HTTP controllers, routes, middlewares)
+
+- ## 🚀 Backend API – Node.js & TypeScript
+
+Scalable REST API built with Node.js and TypeScript using Hexagonal Architecture.
+Focused on clean code, modular design and real-world backend practices.
