@@ -33,7 +33,7 @@ frameworks or APIs, making the application more maintainable, testable and scala
 - Infrastructure: External implementations (database, services)
 - Interfaces: Entry points (HTTP controllers, routes, middlewares)
 
-- ## 🚀 Backend API – Node.js & TypeScript
+# Backend API – Node.js & TypeScript
 
 Scalable REST API built with Node.js and TypeScript using Hexagonal Architecture.
 Focused on clean code, modular design and real-world backend practices.
